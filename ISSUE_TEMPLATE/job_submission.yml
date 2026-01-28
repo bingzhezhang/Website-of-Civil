@@ -1,0 +1,56 @@
+
+name: Job Submission
+description: Submit a PhD / Postdoc / RA position in Civil Engineering
+title: "[Postdoc] Position Title | Institution"
+labels: ["job"]
+body:
+  - type: dropdown
+    id: position_type
+    attributes:
+      label: Position Type
+      options:
+        - PhD
+        - Postdoc
+        - RA
+    validations:
+      required: true
+
+  - type: input
+    id: institution
+    attributes:
+      label: Institution / Group
+      placeholder: University / Research Group
+    validations:
+      required: true
+
+  - type: input
+    id: location
+    attributes:
+      label: Location
+      placeholder: Country, City
+    validations:
+      required: false
+
+  - type: input
+    id: deadline
+    attributes:
+      label: Application Deadline
+      placeholder: YYYY-MM-DD or Unknown
+    validations:
+      required: false
+
+  - type: input
+    id: source_url
+    attributes:
+      label: Source URL
+      placeholder: Original job advertisement link
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Short Description
+      placeholder: 1–3 sentence summary of the position
+    validations:
+      required: false
