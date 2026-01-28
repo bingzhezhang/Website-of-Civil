@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Job Listings</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Job Listings</h1>
+  <div id="jobs"></div>
+
+  <script>
+    fetch("../data/jobs.json")
+      .then(res => res.json())
+      .then(data => {
+        const container = document.getElementById("jobs");
+        data.forEach(job => {
+          const div = document.createElement("div");
+          div.className = "job";
+          div.innerHTML = `
+            <h3>[${job.type}] ${job.title}</h3>
+            <p>${job.institution} | ${job.location}</p>
+            <p>Deadline: ${job.deadline || "Unknown"}</p>
+            <p>Tags: ${job.tags.join(", ")}</p>
+            <a href="${job.source_url}" target="_blank">Source</a>
+          `;
+          container.appendChild(div);
+        });
+      });
+  </script>
+</body>
+</html>
