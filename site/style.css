@@ -1,0 +1,11 @@
+body {
+  font-family: Arial, sans-serif;
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+}
+
+.job {
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+}
